@@ -1,6 +1,6 @@
 FROM ubuntu:trusty
 
-MAINTAINER guolin <guo.lin@outlook.com>
+MAINTAINER jason <zhangbin.zj@gmail.com>
 
 RUN apt-get update && \
     apt-get install -y --force-yes -m python-pip python-m2crypto &&\
