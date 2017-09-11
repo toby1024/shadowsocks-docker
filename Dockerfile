@@ -4,11 +4,10 @@ MAINTAINER jason <zhangbin.zj@gmail.com>
 
 RUN apt-get update && \
     apt-get install build-essential && \
-    wget https://github.com/jedisct1/libsodium/releases/download/1.0.8/libsodium-1.0.8.tar.gz && \
-    tar xf libsodium-1.0.8.tar.gz && cd libsodium-1.0.8 && \
-    ./configure && make -j2 && \
-    make install && \
-    ldconfig && \
+    wget https://github.com/jedisct1/libsodium/releases/download/1.0.3/libsodium-1.0.3.tar.gz
+RUN tar xf libsodium-1.0.3.tar.gz && cd libsodium-1.0.3 && \
+    ./configure && make && make install
+RUN apt-get update && \
     apt-get install -y --force-yes -m python-pip python-m2crypto && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
