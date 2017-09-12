@@ -3,7 +3,7 @@ FROM ubuntu:trusty
 MAINTAINER jason <zhangbin.zj@gmail.com>
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends build-essential autoconf libtool libssl-dev libpcre3-dev libudns-dev libev-dev asciidoc xmlto automake && \
+    apt-get install -y --no-install-recommends build-essential autoconf libtool libssl-dev libpcre3-dev libudns-dev libev-dev asciidoc xmlto automake && \
     apt-get install -y wget && \
     apt-get install -y git && \
     git clone https://github.com/shadowsocks/simple-obfs.git && \
