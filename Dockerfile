@@ -3,7 +3,14 @@ FROM ubuntu:trusty
 MAINTAINER jason <zhangbin.zj@gmail.com>
 
 RUN apt-get update && \
+    apt-get install --no-install-recommends build-essential autoconf libtool libssl-dev libpcre3-dev libudns-dev libev-dev asciidoc xmlto automake && \
     apt-get install -y wget && \
+    apt-get install -y git && \
+    git clone https://github.com/shadowsocks/simple-obfs.git && \
+    cd simple-obfs && \
+    git submodule update --init --recursive && \
+    ./autogen.sh && \
+    ./configure && make && make install && \
     apt-get install -y build-essential && \
     wget https://github.com/jedisct1/libsodium/releases/download/1.0.8/libsodium-1.0.8.tar.gz && \
     tar xf libsodium-1.0.8.tar.gz && cd libsodium-1.0.8 && \
@@ -11,7 +18,7 @@ RUN apt-get update && \
     ldconfig && \
     apt-get install -y --force-yes -m python-pip python-m2crypto && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* 
 
 RUN pip install shadowsocks
 
