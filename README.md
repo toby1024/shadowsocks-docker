@@ -1,4 +1,4 @@
-fored from guolin/shadowsocks-docker
+forked from guolin/shadowsocks-docker
 ====================
 
 中文简介
