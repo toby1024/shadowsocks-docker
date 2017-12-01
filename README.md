@@ -4,7 +4,8 @@ forked from guolin/shadowsocks-docker
 中文简介
 =========
 shadowsocks 主要是用于翻墙。
-我的实际使用方法是直接在tutum上创建一个digitalocean的docker主机，然后运行这个image，将配置文件挂载进去。
+我的实际使用方法是通过daocloud部署docker，然后挂载配置文件shadowsocks.json 到 /etc/shadowsocks.json。
+通过命令行 ssserver -c /etc/shadowsocks.json 运行
 
 具体的配置如下：
 ---------
@@ -20,4 +21,4 @@ shadowsocks 主要是用于翻墙。
         "plugin_opts":"obfs=http"
 }
 ```
-一般情况只需要改密码就可以了。
+
