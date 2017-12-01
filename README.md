@@ -10,6 +10,7 @@ shadowsocks 主要是用于翻墙。
 ---------
 
 通过配置文件的方式实现
+`
 {
         "server": "0.0.0.0",
         "server_port": 8388,
@@ -18,4 +19,5 @@ shadowsocks 主要是用于翻墙。
         "plugin":"obfs-server",
         "plugin_opts":"obfs=http"
 }
+`
 一般情况只需要改密码就可以了。
