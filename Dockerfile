@@ -12,8 +12,8 @@ RUN apt-get update && \
     ./autogen.sh && \
     ./configure && make && make install && \
     apt-get install -y build-essential && \
-    wget https://github.com/jedisct1/libsodium/releases/download/1.0.8/libsodium-1.0.8.tar.gz && \
-    tar xf libsodium-1.0.8.tar.gz && cd libsodium-1.0.8 && \
+    wget https://github.com/jedisct1/libsodium/releases/download/1.0.17/libsodium-1.0.17.tar.gz && \
+    tar xf libsodium-1.0.17.tar.gz && cd libsodium-1.0.17 && \
     ./configure && make -j2 && make install && \
     ldconfig && \
     apt-get install -y --force-yes -m python-pip python-m2crypto && \
